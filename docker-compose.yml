@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16.3
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: sympera_db
+      POSTGRES_USER: sympera_user
+      POSTGRES_PASSWORD: yourpassword
+    ports:
+      - "5433:5432"
+    networks:
+      - django-network
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DB_NAME=sympera_db
+      - DB_USER=sympera_user
+      - DB_PASSWORD=yourpassword
+      - DB_HOST=db  
+      - DB_PORT=5432
+    depends_on:
+      - db
+    networks:
+      - django-network
+
+volumes:
+  postgres_data:
+
+networks:
+  django-network:

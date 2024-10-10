@@ -1,0 +1,59 @@
+Objective:
+
+The goal of this assignment is to evaluate your ability to design and implement a basic banking API in Python that handles customer accounts, transactions, and balance management. You should focus on code quality, efficiency, and scalability while adhering to industry best practices.
+
+ 
+
+Requirements:
+
+1. API Design:
+
+Develop a simple RESTful API using Flask (or Django) that allows users to perform the following actions
+
+A. Create a new customer account with a name and an initial balance.
+
+B. Deposit funds into an account.
+
+C. Withdraw funds from an account.
+
+D. Transfer funds between two accounts.
+
+E. View the account balance and transaction history.
+
+ 
+
+2. Data Persistence:
+
+ 
+
+Use either an SQL (e.g., SQLite, PostgreSQL) or NoSQL (e.g., MongoDB) database to store account and transaction details.
+
+Ensure that data is properly persisted and that transactions are handled in a secure, atomic manner.
+
+3. Validation and Error Handling:
+
+Implement input validation to prevent invalid transactions (e.g., overdrafts, negative deposits).
+
+Ensure robust error handling for cases like non-existent accounts or invalid transfers.
+
+4. Testing:
+
+Include unit tests to verify the correctness of your API endpoints.
+
+Implement basic integration tests to simulate common user actions, such as creating an account, depositing, and transferring funds.
+
+5. Documentation:
+
+Provide clear instructions for running the API (e.g., dependencies, how to set up the database).
+
+Document the API endpoints using Swagger or another tool to make the API easy to understand and use.
+
+ 
+
+6. Optional:
+
+A. Add JWT-based authentication to secure the API.
+
+B. Use Docker for containerization to simplify deployment.
+
+C. Implement a transaction history endpoint that shows a detailed log of all account activities.

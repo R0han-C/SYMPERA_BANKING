@@ -1,0 +1,63 @@
+
+1.BASIC PYTHON SETUP:
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install django djangorestframework pyjwt psycopg2-binary
+    django-admin startproject banking_api .
+    django-admin startapp accounts
+
+
+2.SETUP POSTGRES CONTAINER:
+    docker ps
+    docker exec -it <container_name_or_id> bash
+    psql -U postgres
+    CREATE DATABASE sympera_db;
+    CREATE USER sympera_user WITH PASSWORD 'yourpassword';
+    GRANT ALL PRIVILEGES ON DATABASE sympera_db TO sympera_user;
+    GRANT ALL PRIVILEGES ON SCHEMA public TO sympera_user;
+    ALTER USER sympera_user WITH SUPERUSER;
+
+    \q
+    exit
+
+3.DOCKER COMMANDS TO RUN:
+    sudo docker-compose down
+    sudo docker system prune -a
+    sudo docker volume prune
+    sudo docker network prune
+    sudo docker-compose up --force-recreate --no-deps --build
+    sudo docker-compose up --build
+
+
+
+Todo:
+1.containe3  - 20 mins
+    
+
+
+
+2.readme - 20 min
+3.Video - 10 mins
+4.Repo - 10 mins
+5.Share - 10 mins
+
+
+
+To enhance:
+1. Logging
+2. Security Layers
+3.Encryption
+4.OTP
+5.Expire Session
+6.Limits and restrictions
+7.Fraudulent Activity metrics
+8.Data Masking
+9.MultiFactor Auth 
+10.Pentesting
+
+
+
+
+
+
+
